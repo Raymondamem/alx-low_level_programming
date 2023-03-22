@@ -8,40 +8,42 @@
  */
 void print_to_98(int n)
 {
+	int tens, ones;
+
 	if (n <= 98)
 	{
-	for (; n <= 98; n++)
-	{
-		if (n < 0)
+		for (; n <= 98; n++)
 		{
-			_putchar('-');
-			int tens = -n / 10;
-			int ones = -n % 10;
-			if (tens > 0)
-				_putchar(tens + '0');
-			_putchar(ones + '0');
+			if (n < 0)
+			{
+				_putchar('-');
+				tens = -n / 10;
+				ones = -n % 10;
+				if (tens > 0)
+					_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
+			else
+			{
+				tens = n / 10;
+				ones = n % 10;
+				if (tens > 0)
+					_putchar(tens + '0');
+				_putchar(ones + '0');
+			}
+			if (n != 98)
+			{
+				_putchar(',');
+				_putchar(' ');
+			}
 		}
-		else
-		{
-			int tens = n / 10;
-			int ones = n % 10;
-			if (tens > 0)
-				_putchar(tens + '0');
-			_putchar(ones + '0');
-		}
-		if (n != 98)
-		{
-			_putchar(',');
-			_putchar(' ');
-		}
-	}
 	}
 	else
 	{
 		for (; n >= 98; n--)
 		{
-			int tens = n / 10;
-			int ones = n % 10;
+			tens = n / 10;
+			ones = n % 10;
 			if (tens > 0)
 				_putchar(tens + '0');
 			_putchar(ones + '0');
