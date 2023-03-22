@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * print_number - which recursively prints an integer in reverse order.
+ * print_times_table - prints the n times table, starting with 0.
+ * @n: the size of the table to print
+ */
 void print_number(int n)
 {
 	if (n >= 10)
@@ -7,10 +12,6 @@ void print_number(int n)
 	_putchar(n % 10 + '0');
 }
 
-/**
- * print_times_table - prints the n times table, starting with 0.
- * @n: the size of the table to print
- */
 void print_times_table(int n)
 {
 	int i, j, result;
