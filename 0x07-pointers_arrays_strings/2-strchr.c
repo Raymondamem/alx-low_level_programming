@@ -6,7 +6,6 @@
  * @c: the character to find
  * Return: a pointer to the first occurrence of the character c in the string s,
  */
-
 char *_strchr(char *s, char c)
 {
 	while (*s != '\0')
@@ -21,5 +20,5 @@ char *_strchr(char *s, char c)
 	{
 		return (s);
 	}
-	return (NULL);
+	return (0);
 }
