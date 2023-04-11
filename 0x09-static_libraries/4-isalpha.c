@@ -12,5 +12,10 @@
  */
 int _isalpha(int c)
 {
-	return ((_islower(c)) || (c >= 'A' && c <= 'Z'));
+	if ((c >= 97 && c <= 122) || (c >= 65 && c <= 90))
+	{
+		return (1);
+	}
+	return (0);
 }
+
