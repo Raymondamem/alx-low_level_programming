@@ -27,32 +27,39 @@ int _strlen(char *s)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *concat;
-	unsigned int len1, len2, i;
+	unsigned int len1 = 0;
+	unsigned int len2 = 0;
+	unsigned int new_len = 0;
+	char *string;
+	unsigned int i;
+	unsigned int j;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	len1 = _strlen(s1);
-	len2 = _strlen(s2);
-
-	if (n >= len2)
-		n = len2;
-
-	oncat = malloc(sizeof(char) * (len1 + n + 1));
-
-	if (concat == NULL)
+	if (s1 != NULL)
+	{
+		len1 = _strlen(s1);
+	}
+	if (s2 != NULL)
+	{
+		len2 = _strlen(s2);
+		if (len2 >= n)
+		{
+			len2 = n;
+		}
+	}
+	new_len = len1 + len2;
+	string = malloc((sizeof(char) * new_len) + 1);
+	if (string == NULL)
+	{
 		return (NULL);
-
+	}
 	for (i = 0; i < len1; i++)
-		concat[i] = s1[i];
-
-	for (i = 0; i < n; i++)
-		concat[len1 + i] = s2[i];
-
-	concat[len1 + n] = '\0';
-
-	return (concat);
+	{
+		string[i] = s1[i];
+	}
+	for (j = 0; j < len2; j++, i++)
+	{
+		string[i] = s2[j];
+	}
+	string[i] = '\0';
+	return (string);
 }
