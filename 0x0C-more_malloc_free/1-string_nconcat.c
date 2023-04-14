@@ -1,5 +1,22 @@
+#include "main.h"
 #include <stdlib.h>
-#include <string.h>
+
+/**
+ * _strlen - count the length of a string
+ * @s: the string to count
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (*(s + i) != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
 
 /**
  * string_nconcat - joins two string together
@@ -18,8 +35,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s2 == NULL)
 		s2 = "";
 
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	len1 = _strlen(s1);
+	len2 = _strlen(s2);
 
 	if (n >= len2)
 		n = len2;
