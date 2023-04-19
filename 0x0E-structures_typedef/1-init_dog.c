@@ -2,27 +2,21 @@
 
 /**
  * init_dog - Initializes a variable of type struct dog
- * @d: Pointer to struct dog
+ * @r: Pointer to struct dog
  * @name: Pointer to char (name of the dog)
  * @age: Float (age of the dog)
  * @owner: Pointer to char (name of the dog's owner)
  *
  * Return: Nothing (void)
  */
-void init_dog(struct dog *d, char *name, float age, char *owner)
+void init_dog(struct dog *r, char *name, float age, char *owner)
 {
 	if (d == NULL)
 	{
-		d = malloc(sizeof(struct dog));
+		r = malloc(sizeof(struct dog));
+	}
 
-		d->name = name;
-		d->age = age;
-		d->owner = owner;
-	}
-	else
-	{
-		d->name = name;
-		d->age = age;
-		d->owner = owner;
-	}
+	r->name = name;
+	r->age = age;
+	r->owner = owner;
 }
