@@ -3,10 +3,10 @@
 
 /**
  * init_dog - Initializes a variable of type struct dog
- * @r: Pointer to struct dog
- * @name: Pointer to char (name of the dog)
- * @age: Float (age of the dog)
- * @owner: Pointer to char (name of the dog's owner)
+ * @d: Pointer to struct the dog
+ * @name: Pointer to the char (name of the dog)
+ * @age: Float for (age of the dog)
+ * @owner: Pointer to the char (name of the dog's owner)
  *
  * Return: Nothing (void)
  */
@@ -14,10 +14,10 @@ void init_dog(struct dog *r, char *name, float age, char *owner)
 {
 	if (d == NULL)
 	{
-		r = malloc(sizeof(struct dog));
+		d = malloc(sizeof(struct dog));
 	}
 
-	r->name = name;
-	r->age = age;
-	r->owner = owner;
+	d->name = name;
+	d->age = age;
+	d->owner = owner;
 }
