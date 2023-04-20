@@ -12,25 +12,25 @@ void print_opcodes(void (*func)(void), int num_bytes);
  */
 int main(int argc, char **argv)
 {
-  int num_bytes;
+	int num_bytes;
 
-  if (argc != 2)
-  {
-    printf("Error\n");
-    return (1);
-  }
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
 
-  num_bytes = atoi(argv[1]);
+	num_bytes = atoi(argv[1]);
 
-  if (num_bytes < 0)
-  {
-    printf("Error\n");
-    return (2);
-  }
+	if (num_bytes < 0)
+	{
+		printf("Error\n");
+		return (2);
+	}
 
-  print_opcodes(main, num_bytes);
+	print_opcodes(main, num_bytes);
 
-  return (0);
+	return (0);
 }
 
 /**
@@ -40,11 +40,11 @@ int main(int argc, char **argv)
  */
 void print_opcodes(void (*func)(void), int num_bytes)
 {
-  int i;
-  unsigned char *opcodes = (unsigned char *)func;
+	int i;
+	unsigned char *opcodes = (unsigned char *)func;
 
-  for (i = 0; i < num_bytes; i++)
-    printf("%.2x ", opcodes[i]);
+	for (i = 0; i < num_bytes; i++)
+		printf("%.2x ", opcodes[i]);
 
-  printf("\n");
+	printf("\n");
 }
