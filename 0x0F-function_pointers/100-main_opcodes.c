@@ -7,7 +7,6 @@ void print_opcodes(void (*func)(void), int num_bytes);
  * main - prints the opcodes of its own main function
  * @argc: number of arguments
  * @argv: array of arguments
- *
  * Return: 0 on success, 1 if wrong number of arguments, 2 if negative num_bytes
  */
 int main(int argc, char **argv)
