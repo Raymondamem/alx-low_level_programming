@@ -1,6 +1,13 @@
+#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+ * print_strings - print string list
+ * @separator: what to separte the number with
+ * @n: number of number  s to print
+ * Return: void
+ */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list args;
