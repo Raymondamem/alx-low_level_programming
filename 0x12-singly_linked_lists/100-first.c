@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-/*
+/**
  * premain - premain function to be called befor main
  */
 void __attribute__ ((constructor)) premain()
