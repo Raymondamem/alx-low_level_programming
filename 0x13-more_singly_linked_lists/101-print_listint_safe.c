@@ -2,7 +2,9 @@
 #include <stdlib.h>
 
 /**
- *
+ * print_listint_safe -function to print lists
+ * @head: listint pointer
+ * Return: returns count of listint nodes
  */
 size_t print_listint_safe(const listint_t *head)
 {
