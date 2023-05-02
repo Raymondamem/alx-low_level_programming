@@ -3,6 +3,9 @@
 #include <stdio.h>
 
 /**
+ * free_listint_safe - function to free lists
+ * @h: the pointer to the stucts
+ * Return: count of structs
  */
 size_t free_listint_safe(listint_t **h)
 {
