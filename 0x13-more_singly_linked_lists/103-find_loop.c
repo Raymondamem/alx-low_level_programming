@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/*
- * find_listint_loop - prototype
- * @head: pointer to list
- * Returns: The address of the node where the loop starts, or NULL if there is no loop
+/**
+ * find_listint_loop - finds the loop in a linked list
+ * @head: pointer to the head of the list
+ *
+ * Return: the address of the node where the loop starts,
+ * or NULL if there is no loop
  */
 listint_t *find_listint_loop(listint_t *head)
 {
