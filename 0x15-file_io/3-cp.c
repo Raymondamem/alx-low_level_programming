@@ -1,11 +1,38 @@
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
 #define BUFSIZE 1024
+
+/**
+ * reduce - reduces the function
+ */
+int reduce_2(int *fd_from, int *fd_to, int *n_read)
+{
+	if (*n_read == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		close(*fd_from);
+		close(*fd_to);
+		exit(98);
+	}
+
+	if (close(*fd_from) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd_from);
+		close(*fd_to);
+		exit(100);
+	}
+
+	if (close(*fd_to) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", *fd_to);
+		exit(100);
+	}
+}
 
 /**
  * main - Entry point
@@ -51,26 +78,8 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	}
-	if (n_read == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(fd_from);
-		close(fd_to);
-		exit(98);
-	}
 
-	if (close(fd_from) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
-		close(fd_to);
-		exit(100);
-	}
-
-	if (close(fd_to) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
-		exit(100);
-	}
+	reduce_2(&fd_from, &fd_to, &n_read);
 
 	return (0);
 }
