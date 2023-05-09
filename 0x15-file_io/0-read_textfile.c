@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include "main.h"
 #include <unistd.h>
 #include <fcntl.h>
@@ -9,10 +10,10 @@
  * @letters: numbers of letters to read
  * Return: returns number of letters read or (0) if error
  */
-ssize_t read_textfile(const char *filename, size_t letters)
+size_t read_textfile(const char *filename, size_t letters)
 {
 	int fd;
-	ssize_t n_read, n_written;
+	int n_read, n_written;
 	char *buffer;
 
 	if (filename == NULL)
