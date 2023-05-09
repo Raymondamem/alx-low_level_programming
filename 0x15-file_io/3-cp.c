@@ -79,7 +79,7 @@ int open_file_to(char *file_to)
 {
 	int fd_to;
 
-	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
