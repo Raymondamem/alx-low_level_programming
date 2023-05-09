@@ -4,6 +4,12 @@
 #include <sys/stat.h>
 #include "main.h"
 
+/**
+ * append_text_to_file - appends to file
+ * @filename: file to append
+ * @text_content: text to append
+ * Return: returns of err or succ
+ */
 int append_text_to_file(const char *filename, char *text_content)
 {
 	int fd;
