@@ -5,34 +5,34 @@
  * of the dlistint_t list
  *
  * @head: head of the list
- * @n: value of the lists element
- * Return: the address of the new lists element
+ * @n: value of the list  element
+ * Return: the address of the new list element
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
-	dlistint_t *new_;
-	dlistint_t *h_;
+	dlistint_t *new;
+	dlistint_t *h;
 
-	new_ = malloc(sizeof(dlistint_t));
-	if (new_ == NULL)
+	new = malloc(sizeof(dlistint_t));
+	if (new == NULL)
 		return (NULL);
 
-	new_->n = n;
-	new_->prev = NULL;
-	h_ = *head;
+	new->n = n;
+	new->prev = NULL;
+	h = *head;
 
-	if (h_ != NULL)
+	if (h != NULL)
 	{
-		while (h_->prev != NULL)
-			h_ = h_->prev;
+		while (h->prev != NULL)
+			h = h->prev;
 	}
 
-	new_->next = h_;
+	new->next = h;
 
-	if (h_ != NULL)
-		h_->prev = new_;
+	if (h != NULL)
+		h->prev = new;
 
-	*head = new_;
+	*head = new;
 
-	return (new_);
+	return (new);
 }
